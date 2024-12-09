@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Ultimo Treno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .scene {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>L'Ultimo Treno</h1>
+    <div id="scene1" class="scene active">
+        <h2>Apertura</h2>
+        <p>In una stazione ferroviaria deserta, Sandro guarda l'orologio, ansioso per il treno in ritardo.</p>
+        <p>Suoni di gocce di pioggia e vento riempiono l'aria.</p>
+        <button class="button" onclick="nextScene(2)">Avanti</button>
+    </div>
+
+    <div id="scene2" class="scene">
+        <h2>Introduzione al Conflitto</h2>
+        <p>Sandro si muove, osservando i dettagli della stazione.</p>
+        <p>Appare un'ombra familiare, il suo ex migliore amico, che lo osserva da lontano.</p>
+        <button class="button" onclick="nextScene(3)">Avanti</button>
+    </div>
+
+    <div id="scene3" class="scene">
+        <h2>Riflessioni sul Passato</h2>
+        <p>Flashback di momenti felici con amici.</p>
+        <p>Sandro trova una polaroid in tasca che scatena forti emozioni.</p>
+        <button class="button" onclick="nextScene(4)">Avanti</button>
+    </div>
+
+    <div id="scene4" class="scene">
+        <h2>Culmine Emotivo</h2>
+        <p>Apparizione della figura del padre che lo invita a seguire.</p>
+        <p>Sandro è combattuto, mentre le ombre del passato lo circondano.</p>
+        <button class="button" onclick="nextScene(5)">Avanti</button>
+    </div>
+
+    <div id="scene5" class="scene">
+        <h2>Conclusione</h2>
+        <p>Sandro fa un passo verso il treno, ma si ferma, indeciso.</p>
+        <p>La scena si chiude con la domanda se salirà o rimarrà.</p>
+    </div>
+
+    <script>
+        function nextScene(sceneNumber) {
+            const scenes = document.querySelectorAll('.scene');
+            scenes.forEach(scene => {
+                scene.classList.remove('active');
+            });
+            document.getElementById('scene' + sceneNumber).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
